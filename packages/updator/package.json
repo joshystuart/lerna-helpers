@@ -1,0 +1,43 @@
+{
+  "name": "@lerna-helpers/updater",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Josh Stuart",
+      "email": "joshstuartx@gmail.com"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshystuart/rafter.git"
+  },
+  "scripts": {
+    "start": "node dist/index.js \"cd ../../ && yarn boilerplate:start\"",
+    "build": "yarn build:index && yarn build:lib && yarn build:types",
+    "build:index": "babel index.ts --out-dir dist --extensions .js,.jsx,.ts,.tsx --source-maps",
+    "build:lib": "babel lib --out-dir dist/lib --extensions .js,.jsx,.ts,.tsx --source-maps",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint": "eslint \"./lib/**/*\" ./babel.config.js ./index.ts",
+    "format": "prettier --write \"lib/**/*.{js,jsx,ts,tsx}\""
+  },
+  "dependencies": {
+    "@lerna-helpers/common": "0.0.1"
+  },
+  "devDependencies": {
+  },
+  "description": "A service that helps update all your dependencies within a lerna project",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "bin": {
+    "watch": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=9"
+  },
+  "gitHead": "cec73cfa8cbfe5bd8422f1ea53f1711330514cc3"
+}

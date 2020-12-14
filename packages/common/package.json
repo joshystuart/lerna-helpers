@@ -1,0 +1,40 @@
+{
+  "name": "@lerna-helpers/common",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Josh Stuart",
+      "email": "joshstuartx@gmail.com"
+    }
+  ],
+  "license": "GPL-3.0-or-later",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshystuart/rafter.git"
+  },
+  "scripts": {
+    "build": "yarn build:index && yarn build:lib && yarn build:types",
+    "build:index": "babel index.ts --out-dir dist --extensions .js,.jsx,.ts,.tsx --source-maps",
+    "build:lib": "babel lib --out-dir dist/lib --extensions .js,.jsx,.ts,.tsx --source-maps",
+    "build:types": "tsc --emitDeclarationOnly",
+    "lint": "eslint \"./lib/**/*\" ./babel.config.js ./index.ts"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "description": "A bunch of lerna helpers that enable us to maintain this, and other mono-repo projects",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "bin": {
+    "update": "./dist/bin/update.js"
+  },
+  "engines": {
+    "node": ">=9"
+  },
+  "gitHead": "cec73cfa8cbfe5bd8422f1ea53f1711330514cc3"
+}
